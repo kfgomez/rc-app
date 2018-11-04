@@ -1,0 +1,33 @@
+.side-drawer{
+    height: 100%;
+    background-color: white;
+    box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.3);
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 70%;
+    z-index: 200;
+    transform: translateX(101%);
+    transition: transform .3s ease-out;
+}
+.side-drawer.open{
+    transform: translateX(0%);
+}
+.side-drawer ul{
+    height: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.side-drawer li{
+    margin-top: 10px;
+}
+.side-drawer a{
+    text-decoration: none;
+    color: inherit;
+    font-size: 25px;
+}
+.current-path{
+    font-weight: bold;
+}
