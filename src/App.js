@@ -35,7 +35,7 @@ class App extends Component {
     axios({
       method: 'post',
       params: data,
-      url: 'https://rc-projects-kev9504.c9users.io:8081/projects/contact',
+      url: 'https://api.pm.redcarats.com/projects/contact',
     }).then(res=>this.setState({
       showAlert: true,
       message: 'Thank you for the message. We will contact you shortly',
