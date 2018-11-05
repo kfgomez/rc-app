@@ -20,7 +20,7 @@ const Alert=(props)=>{
     <div className="alert">
         <div className="alert-wrapper">
             <div 
-            className={"alert-text"+ ` ${props.type}`}>{props.message}</div>
+            className={`alert-text ${props.type}`}>{props.message}</div>
             <div className="alert-image">
                 <img 
                 alt={illustrationObject.alt}

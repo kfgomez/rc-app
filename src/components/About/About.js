@@ -5,7 +5,7 @@ const about=()=>(
     <div className="about">
     <h2>About</h2>
     <p>We are a small web development team looking for the next challenge. From domain setup to illustration, we want to 
-    help you launch your business to the cloud.</p>
+    help you launching your business to the cloud.</p>
     <div className="height-spacer"/>
     
     <div className="image-wrapper">

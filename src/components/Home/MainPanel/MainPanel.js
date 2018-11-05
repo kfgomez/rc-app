@@ -13,7 +13,7 @@ const mainPanel=()=>(
                 <div className="title">
                 Ready to take the next step?</div>
                 <div className="body">
-                Transform your ideas into modern web applicaitons
+                Transform your ideas into modern web applications
                 </div>
             </div>
             <div className="link-wrapper">

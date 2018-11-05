@@ -45,7 +45,7 @@ const sliderPanel=()=>{
             <img src={reactIllustration} 
             alt="react illustration"/>
             <h5 className="react">React</h5>
-            <p>Painless dynamic UIs with one of the most popular Javascript Frameworks</p>
+            <p>Dynamic UIs with one of the most popular Javascript Frameworks</p>
             </div>
           </div>
           
