@@ -30,13 +30,13 @@ class ContactForm extends Component{
                 name="contact_name"
                 value={this.state.contact_name}
                 onChange={this.onChangeHandler}
-                placeholder="Name..."/>
+                placeholder="Name"/>
                 <input 
                 name="contact_email"
                 value={this.state.contact_email}
                 type="email"
                 onChange={this.onChangeHandler}
-                placeholder="Email..."
+                placeholder="Email"
                 />
                 <textarea 
                 name="description"
