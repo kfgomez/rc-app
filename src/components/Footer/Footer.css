@@ -31,6 +31,9 @@
 .icon-wrapper img{
     height: 20px;
 }
+.icon-wrapper img:hover{
+    cursor: pointer;
+}
 @media(min-width: 769px){
     .footer{
         height: 50px;

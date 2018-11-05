@@ -6,7 +6,7 @@ import {NavLink} from 'react-router-dom';
 const mainPanel=()=>(
     <div className="main-panel">
         <div className="illustration">
-            <img src={illustration}/>
+            <img src={illustration} alt="react box"/>
         </div>
         <div className="legend-wrapper">
             <div className="legend">

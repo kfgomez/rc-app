@@ -1,6 +1,5 @@
 import React, { Component } from 'react'; 
 import './ContactForm.css';
-import axios from 'axios';
 class ContactForm extends Component{
     state={
         contact_name: '',
@@ -12,21 +11,21 @@ class ContactForm extends Component{
             [e.target.name]:e.target.value,
         });
     }
-    submitForm=(e)=>{
+    handleSubmitForm=(e)=>{
         e.preventDefault();
         const data = this.state;
-        axios({
-            method: 'post',
-            url: 'https://rc-projects-kev9504.c9users.io:8081/projects/contact',
-            params: data,
-        }).then(res=>console.log(res))
-        .catch(err=>console.log(err));
+        this.props.submitForm(data);
+        this.setState({
+            contact_name: '',
+            contact_email: '',
+            description: '',
+        });
     }
     render(){
         let disabled=Object.values(this.state).some(el=>el==='');
         return(
             <div className="form-container">
-                <form onSubmit={this.submitForm}>
+                <form onSubmit={this.handleSubmitForm}>
                 <input 
                 name="contact_name"
                 value={this.state.contact_name}

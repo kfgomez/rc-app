@@ -30,10 +30,12 @@ const sideDrawer=(props)=>{
             to='/contact'>contact</NavLink>
         </li>
         <li>
-            <NavLink 
-            exact
-            activeClassName='current-path'
-            to='/login'>login</NavLink>
+            <a 
+            href="https://pm.redcarats.com"
+            target="_blank"
+            rel="noopener noreferrer">
+            login
+            </a>
         </li>
     </ul>
     </nav>);
