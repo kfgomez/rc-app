@@ -11,6 +11,7 @@ import About from './components/About/About';
 import CatchAll from './components/CatchAll/CatchAll';
 import Alert from './components/Alert/Alert';
 import axios from 'axios';
+import Spinner from './components/Spinner/Spinner';
 class App extends Component {
   state={
     showSideDrawer: false,
@@ -18,6 +19,7 @@ class App extends Component {
     showAlert: false,
     message: '',
     alertType: '',
+    loading: false, 
   }
   showSideDrawerHandler=()=>{
     this.setState({
@@ -32,21 +34,26 @@ class App extends Component {
     });
   }
   submitFormHandler=(data)=>{
+    this.setState({
+      loading: true,
+    });
     axios({
       method: 'post',
       params: data,
-      url: 'https://api.pm.redcarats.com/projects/contact',
+      url: 'https://api.redcarats.com/projects/contact',
     }).then(res=>this.setState({
       showAlert: true,
       message: 'Thank you for the message. We will contact you shortly',
-      alertType: 'success'
+      alertType: 'success',
+      loading: false,
     }))
     .catch(err=>{
       console.log(err);
       this.setState({
       showAlert: true,
       message: `something went wrong, please try again later.`,
-      alertType: 'error'
+      alertType: 'error',
+      loading: false,
     })});
   }
   closeAlertHandler=()=>{
@@ -55,6 +62,7 @@ class App extends Component {
   render() {
     let backdrop=null;
     let alertComponent=null;
+    let spinner=null;
     if(this.state.showSideDrawer){
       backdrop=<Backdrop 
       hideSideDrawerHandler={this.hideSideDrawerHandler}/>;
@@ -66,9 +74,13 @@ class App extends Component {
       closeAlertHandler={this.closeAlertHandler}
       type={this.state.alertType}/>;
     }
+    if(this.state.loading){
+      spinner=<Spinner />;
+    }
     return (
       <BrowserRouter>
       <div className="App">
+      {spinner}
       <Toolbar 
       showSideDrawerHandler={this.showSideDrawerHandler}/>
       {alertComponent}
